@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		
+		<!-- Website Title & Description for Search Engine purposes -->
+		<title><%= title %></title>
+		<meta name="description" content="">
+		
+		<!-- Mobile viewport optimized -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		
+		<!-- Bootstrap CSS -->
+		<link href="/css/bootstrap.min.css" rel="stylesheet">
+		<link href="/css/bootstrap-glyphicons.css" rel="stylesheet">
+		
+		<!-- Custom CSS -->
+		<link href="/css/styles.css" rel="stylesheet">
+		
+		<!-- Include Modernizr in the head, before any other Javascript -->
+		<script src="/js/modernizr-2.6.2.min.js"></script>
+		
+	</head>
+	<body>
+		<div class="container" id="main">
+        	<div class="navbar">
+            	<div class="container">
+                	<a class="navbar-brand" href="/"><img src="/img/uber-logo.png" alt="Your Logo"></a>
+            	</div><!-- end container-->
+            </div><!-- end navbar -->
+
+            <% if (messages.length > 0) { %>
+                <div class="alert alert-warning" style="display: block;">
+                    <p><span class="glyphicon glyphicon-warning-sign"></span> <strong>Alert!</strong> You inserted invalid data. Please fix the following errors:</p>
+                    <ul>
+                        <% for (var i in messages) { %>
+                            <li class="flash"><%= messages[i] %></li>
+                        <% } %>    
+                    </ul>
+                </div>
+            <% } %>
+
+            <h4 id="title">Hello, to sign up please fill the form with valid information</h4>
+
+            <hr>
+
+			<form action="/signup" method="POST" class="form-horizontal">
+                <div id="nameInput" class="form-group">
+                    <label class="col-lg-2 control-label" for="inputName">Name</label>
+                                
+                    <div class="col-lg-10">
+                        <input class="form-control" id="inputName" name="fullName" placeholder="Full Name" type="text">
+                    </div>
+                </div>
+
+                <div id="usernameInput" class="form-group">
+                    <label class="col-lg-2 control-label" for="inputUsername">Username</label>
+
+                    <div class="col-lg-10">
+                        <input type="text" name="username" class="form-control" id="inputUsername" placeholder="Username">
+                    </div>
+                </div>
+                            
+                <div id="emailInput" class="form-group">
+                    <label class="col-lg-2 control-label" for="inputEmail">Email</label>
+                                
+                    <div class="col-lg-10">
+                       <input name="email" class="form-control" id="inputEmail" placeholder="Email" type="email">
+                    </div>
+                </div>
+
+                <div id="passwordInput" class="form-group">
+                    <label class="col-lg-2 control-label" for="inputPass1">Password</label>
+                                
+                    <div class="col-lg-10">
+                        <input class="form-control" id="inputPass1" placeholder="6-15 characters" name="password" type="password">
+                    </div>
+                </div>
+
+                <div id="passwordRepeatInput" class="form-group">
+                    <label class="col-lg-2 control-label" for="inputPass2">Re-type Password</label>
+                                
+                    <div class="col-lg-10">
+                        <input class="form-control" id="inputPass2" placeholder="Re-type your password" name="passwordRepeat" type="password">
+                    </div>
+                </div>
+
+                <div id="userType" class="form-group">
+                    <label class="col-lg-2 control-label" for="inputType">User Type</label>
+                    <div class="col-lg-10" class="form-control">
+                        <input type="radio" name="userType" id="inputPassenger" value="Passenger">Passenger <br>
+                        <input type="radio" name="userType" id="inputDriver" value="Driver">Driver
+                    </div>
+                </div>            
+
+                <div id="cardNumberInput" class="form-group">
+                    <label class="col-lg-2 control-label" for="inputCard">Card Number</label>
+                                                        
+                    <div class="col-lg-10">
+                        <input name="cardNumber" class="form-control" id="inputCard" placeholder="Valid Card Number" type="text">
+                    </div>
+                </div>
+                
+                <div id="driverLicenseInput" class="form-group">
+                    <label class="col-lg-2 control-label" for="inputDLN">Driver License Number</label>
+                                                        
+                    <div class="col-lg-10">
+                        <input name="licenseNumber" class="form-control" id="inputDLN" placeholder="Valid Driver License Number" type="text">
+                    </div>
+                </div>
+
+                <div id="addressInput" class="form-group">
+                    <label class="col-lg-2 control-label" for="inputAddress">Address</label>
+                                
+                    <div class="col-lg-10">
+                        <textarea name="homeAddress" class="form-control" id="inputAddress" placeholder="Complete Address" rows="3"></textarea>
+                    </div>
+                </div>
+
+                <div id="phoneInput" class="form-group">
+                    <label class="col-lg-2 control-label" for="inputPhone">Phone Number</label>
+                                
+                    <div class="col-lg-10">
+                        <input name="phone" class="form-control" id="inputPhone" placeholder="Phone Number" type="text">
+                    </div>
+                </div>
+
+                <div id="submitInput" class="form-group pull-right">
+                    <button class="btn btn-success" type="submit">Sign Up</button>
+                    <a class="btn btn-primary" href="/signin">or Already A Member?</a>
+                </div>
+            </form>
+                    	
+    <!-- All Javascript at the bottom of the page for faster page loading -->
+		
+	<!-- First try for the online version of jQuery-->
+	<script src="/js/jquery-1.8.2.min.js"></script>
+	
+	<!-- Bootstrap JS -->
+	<script src="/js/bootstrap.min.js"></script>
+	
+	<!-- Custom JS -->
+    <script src="/js/signup.js"></script>
+	</body>
+</html>

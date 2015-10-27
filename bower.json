@@ -1,0 +1,12 @@
+{
+  "name": "infosec-nguber",
+  "description": "Uber 'clone app' developed to counter Uber's internal weaknesses",
+  "main": "app.js",
+  "authors": [
+    "Baskoro Indrayana <baskoroindrayana@outlook.com>"
+  ],
+  "license": "ISC",
+  "moduleType": [],
+  "homepage": "",
+  "private": true
+}
