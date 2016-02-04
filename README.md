@@ -1,5 +1,5 @@
 # NGUBER (A mock Uber app)
-> By: Baskoro Indrayana
+> By: Baskoro Indrayana, Davin, Ivan Hadi Putra, Jonathan Tandarma, and Ted.
 
 ## Description
 This is a project I submitted for the Information Security course I took in Zhejiang University.
