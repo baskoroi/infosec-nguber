@@ -1,11 +1,12 @@
-<<<<<<< HEAD
-### Angular views:
+# NGUBER (A mock Uber app)
+> By: Baskoro Indrayana
 
-- example1 = trip-locations.client.view.html
-- example2 = confirm-trip.client.view.html
-- example3 = confirm-code.client.view.html
-- example4 = trip-final.client.view.html
-=======
-# infosec-nguber
-Project for Information Security course (Zhejiang University)
->>>>>>> fcaa0d105c1eed797ccdc717cbd85cb51001f2b5
+## Description
+This is a project I submitted for the Information Security course I took in Zhejiang University.
+
+It is a demonstration (more like a _simulation_) of a mock Uber application. In this project we try to solve problems that Uber and other Chinese online taxi providers face.
+
+## Accompanying Files
+[Here](https://goo.gl/PwdbxC) is more information about the problems and solutions we offer.
+
+[Here](https://goo.gl/GsjHyj) is also the report paper of this project.
