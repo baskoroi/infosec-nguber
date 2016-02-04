@@ -1,0 +1,23 @@
+<h4>Select Destination</h4>
+<div style="float:left">
+    <div class="input-group">
+        <input places-auto-complete 
+        		type="text" 
+        		ng-model="trip.origin" 
+        		placeholder="From..." 
+        		class="form-control"
+        		ng-disabled="drivingMode">
+    </div>
+    <div class="input-group">
+        <input places-auto-complete 
+        		type="text"
+        		ng-model="trip.destination"
+        		placeholder="To..."
+        		class="form-control"
+        		ng-disabled="drivingMode">
+    </div>
+</div>
+<div>
+    <button ng-click="calculateTrip()" class="btn btn-default btn-next-menu" style="height:77px;" id="btn1"><span class="glyphicon glyphicon-search"></span></button>
+</div>
+<br>

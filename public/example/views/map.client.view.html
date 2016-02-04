@@ -1,0 +1,11 @@
+<map center="{{ trip.origin || defaultOrigin }}" zoom="14">
+	<directions ng-show="trip.destination"
+		draggable="true"
+		panel="directions-panel"
+		travel-mode="DRIVING"
+		origin="{{trip.origin}}"
+		destination="{{trip.destination}}">
+	</directions>
+
+
+</map>

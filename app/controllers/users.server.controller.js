@@ -83,11 +83,54 @@ exports.signup = function(req, res, next) {
 
         var body = req.body;
         var message = null;
+    	var errorInput = false;
+
+        // STEP 0: Make sure every input has a value
+    	if (body.fullName === "") {
+    		req.flash("error", "Full name is required");
+    		errorInput = true;
+    	} 
+    	if (body.username === "") {
+    		req.flash("error", "Username is required");
+    		errorInput = true;
+    	}
+    	if (body.email === "") {
+    		req.flash("error", "Email is required");
+    		errorInput = true;
+    	}
+    	if ((body.password === "") || (body.passwordRepeat === "")) {
+    		req.flash("error", "First and/or second passwords are required");
+    		errorInput = true;
+    	}
+    	if (typeof body.userType === "undefined") {
+    		req.flash("error", "User type must be defined (driver or passenger)");
+    		errorInput = true;
+    	}
+    	if (body.userType === "Passenger" && body.cardNumber === "") {
+    		req.flash("error", "Please enter your credit card number");
+    		errorInput = true;
+    	}
+    	if (body.userType === "Driver" && body.licenseNumber === "") {
+    		req.flash("error", "Please enter your driving license number");
+    		errorInput = true;
+    	}
+    	if (body.homeAddress === "") {
+    		req.flash("error", "Please enter your home address");
+    		errorInput = true;	
+    	}
+    	if (body.phone === "") {
+    		req.flash("error", "Please enter your phone number");
+    		errorInput = true;	
+    	}
 
         // STEP 1: Check for password & passwordRepeat
         if (body.password !== body.passwordRepeat) {
             req.flash("error", "The passwords must be the same");
-            return res.redirect("/signup");
+            errorInput = true;
+        }
+
+        if (errorInput) {
+	        return res.redirect("/signup");
         }
 
         // STEP 2: Identify whether user is a passenger / driver
@@ -152,6 +195,16 @@ exports.list = function(req, res, next) {
 		}
 	})
 };
+
+exports.listDrivers = function(req, res, next) {
+	Driver.find({}, function(err, drivers) {
+		if (err) {
+			return next(err);
+		} else {
+			res.json(drivers);
+		}
+	});
+}
 
 exports.read = function(req, res) {
 	res.json(req.user);

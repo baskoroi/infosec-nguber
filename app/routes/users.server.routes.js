@@ -27,5 +27,8 @@ module.exports = function(app) {
 		put(usersCtrl.update).
 		delete(usersCtrl.delete);
 
+	app.route("/drivers").
+		get(usersCtrl.listDrivers);
+
 	app.param("userId", usersCtrl.userByID);
 }

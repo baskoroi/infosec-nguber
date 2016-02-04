@@ -1,0 +1,5 @@
+.idea/**
+node_modules/**
+public/fonts/**
+public/icons/**
+public/img/**
